@@ -1,0 +1,8 @@
+name: githubcontextdata
+on: workflow_dispatch
+jobs:
+  info:
+    run-on: ubuntu-latest
+    steps:
+      - name: priting context data
+        run: echo "${{toJson(github)}}"
