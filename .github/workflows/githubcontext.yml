@@ -6,3 +6,5 @@ jobs:
     steps:
       - name: priting context data
         run: echo "${{ toJSON(github) }}"
+      - name: cloning repo
+        run: echo {{ toJSON(github.repositoryUrl) }}
