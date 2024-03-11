@@ -7,4 +7,4 @@ jobs:
       - name: priting context data
         run: echo "${{ toJSON(github) }}"
       - name: cloning repo
-        run: echo "${{github.repositoryUrl}}"
+        run: git clone "${{github.repositoryUrl}}"
