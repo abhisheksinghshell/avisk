@@ -1,0 +1,16 @@
+name: mutiple-steps
+on: workflow_dispatch
+jobs:
+  first-work:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first
+        run: echo " first step
+      - name: second
+        run: echo "second step"
+      - name: third
+        run: echo "third"
+        
+       
+    
+    
