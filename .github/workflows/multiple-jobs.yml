@@ -4,10 +4,10 @@ jobs:
   firstjob:
     runs-on: ubuntu-latest
     steps:
-      name: first-step
-      run: echo " hi i am first step of the first job"
+     - name: first-step
+       run: echo " hi i am first step of the first job"
   secondjob:
     runs-on: ubuntu-latest
     steps:
-      name: first-step
-      run: echo "hi iam first step of second task"
+     - name: first-step
+       run: echo "hi iam first step of second task"
