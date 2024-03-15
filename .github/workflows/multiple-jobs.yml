@@ -11,4 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: first-step
-       run: echo "hi iam first step of second task"
+       run: echo "hi iam second task dependent on second task"
+  thirdjob:
+    needs: firstjob
+    runs-on: ubuntu-latest
+    steps:
+     - name: third step
+       run: echo "hi iam third job dependent on second task"     
