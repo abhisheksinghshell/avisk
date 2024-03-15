@@ -18,3 +18,15 @@ jobs:
     steps:
      - name: third step
        run: echo "hi iam third job dependent on second task"     
+  forthjob:
+    needs: secondjob
+    runs-on: ubuntu-latest
+    steps:
+     - name: third step
+       run: echo "hi iam forth job dependent on second task"    
+  fifthjob:
+    needs: forthjob
+    runs-on: ubuntu-latest
+    steps:
+     - name: third step
+       run: echo "hi iam fifth job dependent on forth task"      
