@@ -7,6 +7,7 @@ jobs:
      - name: first-step
        run: echo " hi i am first step of the first job"
   secondjob:
+    needs: firstjob
     runs-on: ubuntu-latest
     steps:
      - name: first-step
