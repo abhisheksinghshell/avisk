@@ -8,4 +8,6 @@ jobs:
             - name: checkout_code
               uses: actions/checkout@v4
             - name : list-dev
-              run: ls ${{ github.workspace}}/dev/stacks/network
+              run: |
+               ls ${{ github.workspace}}/dev/stacks/network
+               cd ${{ github.workspace}}/dev/stacks/network
