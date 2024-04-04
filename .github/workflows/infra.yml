@@ -1,0 +1,11 @@
+name: infra-deployment
+on: workflow_dispatch
+jobs:
+    checkout_code:
+        runs-on: ubuntu-latest
+        name: Checkout code
+        steps:
+            - name: checkout_code
+              uses: actions/checkout@v4
+            - name : list-dev
+              run: ls ${{ github.workspace}}/dev/stacks/network
