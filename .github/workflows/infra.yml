@@ -5,9 +5,14 @@ jobs:
         runs-on: ubuntu-latest
         name: Checkout code
         steps:
-            - name: checkout_code
+            - name: checkout-code
               uses: actions/checkout@v4
             - name : list-dev
               run: |
                ls ${{ github.workspace}}/dev/stacks/network
                cd ${{ github.workspace}}/dev/stacks/network
+            - name: upload-artifact
+              uses: actions/upload-artifact@v4
+              with:
+                name : my-first-artifact
+                path: ${{ github.workspace }}
