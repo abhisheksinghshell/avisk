@@ -46,5 +46,8 @@ jobs:
           run: |
            cd ${{ github.workspace }}/dev/stacks/network
            terraform init
+        - name: plan terraform
+          run: |
+           terraform plan
 
 
