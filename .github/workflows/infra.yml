@@ -54,5 +54,6 @@ jobs:
           working-directory: ${{ github.workspace }}/dev/stacks/network
           run: |
            ls -la
+           terraform plan
 
 
