@@ -55,5 +55,10 @@ jobs:
           run: |
            ls -la
            terraform plan
+        - name: Apply terraform 
+          working-directory: ${{ github.workspace }}/dev/stacks/network
+          run: |
+            terraform apply -auto-approve
+
 
 
