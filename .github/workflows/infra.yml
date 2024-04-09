@@ -30,5 +30,13 @@ jobs:
             name: my-first-artifact
             path: .
         - name: Setting aws credentials
-          uses:     
+          uses: aws-actions/configure-aws-credentials@v4
+          with:
+            aws-region: us-east-1
+            role-to-assume: arn:aws:iam::975050222078:role/oidc-role-for-github
+            role-session-name: github_to_aws_via_oidc
+        - name: setting up terraform
+          uses: hashicorp/setup-terraform@v3
+          with:
+            terraform_version: "1.1.7"    
 
