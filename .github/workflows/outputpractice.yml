@@ -2,13 +2,18 @@ name: outputs-practice
 on: workflow_dispatch
 jobs:
     job1:
-        runs-on: ubuntu-latest
-        # Map a step output to a job output
+        name: job1
+        runs-on: ubuntu:latest
         outputs:
-            output1: ${{ steps.step1.outputs.test }}
-            output2: ${{ steps.step2.outputs.test }}
+            output1: ${{ steps.first.outputs.test }}
         steps:
-        - id: step1
-          run: echo "test=hello" >> "$GITHUB_OUTPUT"
-        - id: step2
-          run: echo "test=world" >> "$GITHUB_OUTPUT"
+            - name: setting output
+              id: first
+              run: echo "test=Hello" >> $GITHUB_OUTPUT
+    jobs2:
+        name: job2
+        runs-on: ubuntu:latest
+        needs : job1
+        steps:
+            - name: fetching output
+              run: echo "output is ${{needs.jobs1.outputs.output1}}"
