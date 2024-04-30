@@ -16,4 +16,6 @@ jobs:
         needs : job1
         steps:
             - name: fetching output
-              run: echo "output is ${{needs.jobs1.outputs.output1}}"
+              env:
+                value: ${{ needs.jobs1.outputs.output1}}
+              run: echo "$value"
