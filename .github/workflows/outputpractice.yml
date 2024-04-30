@@ -1,0 +1,11 @@
+name: outputs-practice
+on: workflow_dispatch
+jobs:
+    Printing-hello:
+        runs-on: ubuntu:latest
+        outputs:
+            myoutput: ${{ steps.hello.outputs.testoutput }}
+        steps:
+            -  name: print-hello
+               id: hello
+               run: echo 'testoutput=mydata' >> $GITHUB_OUTPUT
