@@ -1,11 +1,14 @@
 name: outputs-practice
 on: workflow_dispatch
 jobs:
-    Printing-hello:
-        runs-on: ubuntu:latest
+    job1:
+        runs-on: ubuntu-latest
+        # Map a step output to a job output
         outputs:
-            myoutput: ${{ steps.hello.outputs.testoutput }}
+            output1: ${{ steps.step1.outputs.test }}
+            output2: ${{ steps.step2.outputs.test }}
         steps:
-            -  name: print-hello
-               id: hello
-               run: echo 'testoutput=mydata' >> $GITHUB_OUTPUT
+        - id: step1
+          run: echo "test=hello" >> "$GITHUB_OUTPUT"
+        - id: step2
+          run: echo "test=world" >> "$GITHUB_OUTPUT"
