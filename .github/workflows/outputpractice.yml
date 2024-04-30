@@ -18,5 +18,4 @@ jobs:
             - name: fetching output
               env:
                 value: ${{ needs.job1.outputs.output1}}
-              run: echo "$value" |
-                echo "hello ${{ needs.job1.outputs.output1}} "
+              run: echo "$value" 
